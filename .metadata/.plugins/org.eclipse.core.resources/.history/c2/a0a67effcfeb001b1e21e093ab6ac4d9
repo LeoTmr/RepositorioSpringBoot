@@ -1,0 +1,15 @@
+package ProjetoHelloword;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("menteHabilidade")
+public class Ment_HabilidadesController {
+		
+		@GetMapping
+	public String menteHabilidade() {
+		return "Ola Generation, a mentalidade que mais usei foi a mentalidade de persistencia e a habilidade a orientação aos detalhes";
+	}
+}
