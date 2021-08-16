@@ -50,15 +50,19 @@ public class Usuario {
 
 	// Primeiro método Construtor
 
-	public Usuario(long id, String nome, String usuario, String senha, LocalDate dataNascimento) {
+	
+	public Usuario(long id, String nome, String usuario, String senha,LocalDate dataNascimento) {
+		
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
 		this.dataNascimento = dataNascimento;
 	}
+			
 
-	// Segundo método Construtor
+
+	
 
 	public Usuario() {	}
 
@@ -103,12 +107,6 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public List<Postagens> getPostagem() {
-		return this.postagem;
-	}
-
-	public void setPostagem(List<Postagens> postagem) {
-		this.postagem = postagem;
-	}
+	
 
 }

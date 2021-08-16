@@ -9,25 +9,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_tema")
-public class Tema {
-
-	@Id
+@Table(name = "tb_temas")
+public class Tema{
+    
+    @Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
+	@NotNull(message = "O atributo descrição é obrigatório")
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tema" , cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
-	private List<Postagens> postagens;
-
+	private List<Postagens> postagem;
+		
 	public long getId() {
 		return id;
 	}
@@ -43,12 +43,15 @@ public class Tema {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public List<Postagens> getPostagens() {
-		return postagens;
+	
+	public List<Postagens> getPostagem() {
+		return postagem;
 	}
 
-	public void setPostagens(List<Postagens> postagens) {
-		this.postagens = postagens;
+	public void setPostagem(List<Postagens> postagem) {
+		this.postagem = postagem;
 	}
+
 }
+
+

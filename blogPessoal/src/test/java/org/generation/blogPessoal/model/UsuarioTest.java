@@ -1,5 +1,6 @@
-package br.org.generation.blogPessoal.model;
+package org.generation.blogPessoal.model;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
@@ -34,7 +35,7 @@ public class UsuarioTest {
 
 		LocalDate data = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
-        usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278", data);
+        usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "12345678S", data);
 
 	}
 
@@ -57,7 +58,7 @@ public class UsuarioTest {
 		
 		System.out.println(violacao.toString());
 
-		assertTrue(violacao.isEmpty());
+		assertFalse(violacao.isEmpty());
 	}
 
 }
